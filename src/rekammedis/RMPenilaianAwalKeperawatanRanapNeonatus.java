@@ -863,7 +863,7 @@ public final class RMPenilaianAwalKeperawatanRanapNeonatus extends javax.swing.J
         BtnPrint = new widget.Button();
         BtnAll = new widget.Button();
         BtnKeluar = new widget.Button();
-        TabRawat = new javax.swing.JTabbedPane();
+        TabRawat = new widget.TabPane();
         internalFrame2 = new widget.InternalFrame();
         scrollInput = new widget.ScrollPane();
         FormInput = new widget.PanelBiasa();
@@ -899,7 +899,7 @@ public final class RMPenilaianAwalKeperawatanRanapNeonatus extends javax.swing.J
         jSeparator12 = new javax.swing.JSeparator();
         Scroll6 = new widget.ScrollPane();
         tbMasalahKeperawatan = new widget.Table();
-        TabRencanaKeperawatan = new javax.swing.JTabbedPane();
+        TabRencanaKeperawatan = new widget.TabPane();
         panelBiasa1 = new widget.PanelBiasa();
         Scroll8 = new widget.ScrollPane();
         tbRencanaKeperawatan = new widget.Table();
@@ -9061,8 +9061,8 @@ public final class RMPenilaianAwalKeperawatanRanapNeonatus extends javax.swing.J
     private widget.TextBox TNoRw;
     private widget.TextBox TPasien;
     private widget.TextBox TPasien1;
-    private javax.swing.JTabbedPane TabRawat;
-    private javax.swing.JTabbedPane TabRencanaKeperawatan;
+    private widget.TabPane TabRawat;
+    private widget.TabPane TabRencanaKeperawatan;
     private widget.ComboBox TaliPusat;
     private widget.Tanggal TanggalPulang;
     private widget.TextBox TanggalRegistrasi;
@@ -10539,6 +10539,8 @@ public final class RMPenilaianAwalKeperawatanRanapNeonatus extends javax.swing.J
             iyembuilder=null;
         }catch(Exception e){
             System.out.println("Notifikasi : "+e);
+        }finally {
+            if (fileWriter != null) try { fileWriter.close(); } catch (Exception e) {}
         }
     }
     
@@ -10592,6 +10594,10 @@ public final class RMPenilaianAwalKeperawatanRanapNeonatus extends javax.swing.J
             myObj.close();
         }catch(Exception e){
             System.out.println("Notifikasi : "+e);
+        }finally {
+            if (myObj != null) try { myObj.close(); } catch (Exception e) {}
+            response = null;
+            root = null;
         }
     }
     
@@ -10627,6 +10633,8 @@ public final class RMPenilaianAwalKeperawatanRanapNeonatus extends javax.swing.J
             iyembuilder=null;
         }catch(Exception e){
             System.out.println("Notifikasi : "+e);
+        }finally {
+            if (fileWriter != null) try { fileWriter.close(); } catch (Exception e) {}
         }
     }
     
@@ -10685,6 +10693,10 @@ public final class RMPenilaianAwalKeperawatanRanapNeonatus extends javax.swing.J
             myObj.close();
         }catch(Exception e){
             System.out.println("Notifikasi : "+e);
+        }finally {
+            if (myObj != null) try { myObj.close(); } catch (Exception e) {}
+            response = null;
+            root = null;
         }
     }
     

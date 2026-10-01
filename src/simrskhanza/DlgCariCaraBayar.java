@@ -169,7 +169,7 @@ public final class DlgCariCaraBayar extends javax.swing.JDialog {
         Scroll.setName("Scroll"); // NOI18N
         Scroll.setOpaque(true);
 
-        tbKamar.setAutoCreateRowSorter(true);
+        tbKamar.setAutoCreateRowSorter(false);
         tbKamar.setName("tbKamar"); // NOI18N
         tbKamar.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -524,7 +524,7 @@ public final class DlgCariCaraBayar extends javax.swing.JDialog {
             file.createNewFile();
             fileWriter = new FileWriter(file);
             StringBuilder iyembuilder = new StringBuilder();
-            ps=koneksi.prepareStatement("select * from penjab where penjab.status='1' order by penjab.png_jawab");
+            ps=koneksi.prepareStatement("select * from penjab where penjab.status='1'");
             try{           
                 rs=ps.executeQuery();
                 i=1;
@@ -555,6 +555,8 @@ public final class DlgCariCaraBayar extends javax.swing.JDialog {
             iyembuilder=null;
         } catch (Exception e) {
             System.out.println("Notifikasi : "+e);
+        } finally {
+            if (fileWriter != null) try { fileWriter.close(); } catch (Exception e) {}
         }
         LCount.setText(""+tabMode.getRowCount());
     }
@@ -601,6 +603,10 @@ public final class DlgCariCaraBayar extends javax.swing.JDialog {
             myObj.close();
         } catch (Exception ex) {
             System.out.println("Notifikasi : "+ex);
+        } finally {
+            if (myObj != null) try { myObj.close(); } catch (Exception e) {}
+            response = null;
+            root = null;
         }
         LCount.setText(""+tabMode.getRowCount());
     } 

@@ -224,7 +224,14 @@ public class DlgUpdateUser extends javax.swing.JDialog {
             validasi_pengujian_sampel_lab_kesehatan_lingkungan=false,rekap_pelayanan_lab_kesehatan_lingkungan=false,pembayaran_pengujian_sampel_lab_kesehatan_lingkungan=false,skrining_curb65=false,bpjs_potensi_prb=false,
             bpjs_riwayat_pelayanan_obat=false,skrining_gizi_kehamilan=false,bpjs_rekap_peserta_prb_apotek=false,serah_terima_anggota_tubuh_barang=false,pcra_icra_jenis_aktivitas_proyek=false,
             pcra_icra_lokasi_kelompok_risiko_area=false,pcra_icra_kelas_risiko_pencegahan=false,pcra_icra_tindakan_pengendalian=false,pcra_icra_identifkasi_risiko_infeksi=false,pcra_icra_identifkasi_risiko_keselamatan=false,
-            pcra_icra_identifkasi_risiko_kebakaran=false,pcra_icra_identifkasi_risiko_utilitas=false,bpjs_daftar_resep_apotek=false;
+            pcra_icra_identifkasi_risiko_kebakaran=false,pcra_icra_identifkasi_risiko_utilitas=false,bpjs_daftar_resep_apotek=false,daftar_permintaan_resep_iterasi_bpjs=false,pcra_icra_pengkajian_risiko_prakonstruksi=false,
+            pcra_icra_persyaratan_harus_dipenuhi=false,satu_sehat_kirim_questionresponse_telaah_farmasi=false,satu_sehat_kirim_allergy_intolerance=false,konsultasi_perawat=false,jawaban_konsultasi_perawat=false,
+            bridging_smart_klaim_bpjs=false,mapping_prosedur_smart_klaim_bpjs=false,mapping_penyakit_smart_klaim_bpjs=false,permintaan_binrohtal=false,surat_permintaan_perlindungan_dari_kekerasan=false,
+            surat_permohonan_privasi=false,surat_permintaan_second_opinion=false,surat_keterangan_berobat=false,surat_penolakan_resusitasi=false,catatan_observasi_ruang_ok=false,hasil_pemeriksaan_usg_abdomen=false,
+            intervensi_nyeri_farmakologi=false,intervensi_nyeri_nonfarmakologi=false,surat_pengajuan_cuti_pasien=false,checklist_kriteria_masuk_isolasi=false,satu_sehat_mapping_kptl_tindakan_ralan=false,
+            satu_sehat_mapping_kptl_tindakan_ranap=false,satu_sehat_mapping_kptl_tindakan_radiologi=false,satu_sehat_mapping_kptl_tindakan_laborat=false,satu_sehat_mapping_kptl_tindakan_operasi=false,
+            satu_sehat_mapping_kptl_tarif_kamar=false,checklist_kriteria_keluar_isolasi=false,satu_sehat_tanda_tangan_elektronik=false,satu_sehat_kirim_composition=false,ringkasan_hutang_vendor_inventaris=false,
+            ringkasan_beban_hutang_lain=false,set_resep_per_cara_bayar=false,skrining_tolac=false,admisi_skoring_tolac=false;
     private final ExecutorService executor = Executors.newSingleThreadExecutor();
     private volatile boolean ceksukses = false;
 
@@ -898,7 +905,14 @@ public class DlgUpdateUser extends javax.swing.JDialog {
         validasi_pengujian_sampel_lab_kesehatan_lingkungan=false;rekap_pelayanan_lab_kesehatan_lingkungan=false;pembayaran_pengujian_sampel_lab_kesehatan_lingkungan=false;skrining_curb65=false;bpjs_potensi_prb=false;
         bpjs_riwayat_pelayanan_obat=false;skrining_gizi_kehamilan=false;bpjs_rekap_peserta_prb_apotek=false;serah_terima_anggota_tubuh_barang=false;pcra_icra_jenis_aktivitas_proyek=false;
         pcra_icra_lokasi_kelompok_risiko_area=false;pcra_icra_kelas_risiko_pencegahan=false;pcra_icra_tindakan_pengendalian=false;pcra_icra_identifkasi_risiko_infeksi=false;pcra_icra_identifkasi_risiko_keselamatan=false;
-        pcra_icra_identifkasi_risiko_kebakaran=false;pcra_icra_identifkasi_risiko_utilitas=false;bpjs_daftar_resep_apotek=false;
+        pcra_icra_identifkasi_risiko_kebakaran=false;pcra_icra_identifkasi_risiko_utilitas=false;bpjs_daftar_resep_apotek=false;daftar_permintaan_resep_iterasi_bpjs=false;pcra_icra_pengkajian_risiko_prakonstruksi=false;
+        pcra_icra_persyaratan_harus_dipenuhi=false;satu_sehat_kirim_questionresponse_telaah_farmasi=false;satu_sehat_kirim_allergy_intolerance=false;konsultasi_perawat=false;jawaban_konsultasi_perawat=false;
+        bridging_smart_klaim_bpjs=false;mapping_prosedur_smart_klaim_bpjs=false;mapping_penyakit_smart_klaim_bpjs=false;permintaan_binrohtal=false;surat_permintaan_perlindungan_dari_kekerasan=false;
+        surat_permohonan_privasi=false;surat_permintaan_second_opinion=false;surat_keterangan_berobat=false;surat_penolakan_resusitasi=false;catatan_observasi_ruang_ok=false;hasil_pemeriksaan_usg_abdomen=false;
+        intervensi_nyeri_farmakologi=false;intervensi_nyeri_nonfarmakologi=false;surat_pengajuan_cuti_pasien=false;checklist_kriteria_masuk_isolasi=false;satu_sehat_mapping_kptl_tindakan_ralan=false;
+        satu_sehat_mapping_kptl_tindakan_ranap=false;satu_sehat_mapping_kptl_tindakan_radiologi=false;satu_sehat_mapping_kptl_tindakan_laborat=false;satu_sehat_mapping_kptl_tindakan_operasi=false;
+        satu_sehat_mapping_kptl_tarif_kamar=false;checklist_kriteria_keluar_isolasi=false;satu_sehat_tanda_tangan_elektronik=false;satu_sehat_kirim_composition=false;ringkasan_hutang_vendor_inventaris=false;
+        ringkasan_beban_hutang_lain=false;set_resep_per_cara_bayar=false;skrining_tolac=false;admisi_skoring_tolac=false;
         try{    
             jml=0;
             for(i=0;i<tbUser.getRowCount();i++){
@@ -1161,7 +1175,15 @@ public class DlgUpdateUser extends javax.swing.JDialog {
                 "user.pembayaran_pengujian_sampel_lab_kesehatan_lingkungan,user.skrining_curb65,user.bpjs_potensi_prb,user.bpjs_riwayat_pelayanan_obat,user.skrining_gizi_kehamilan,"+
                 "user.bpjs_rekap_peserta_prb_apotek,user.serah_terima_anggota_tubuh_barang,user.pcra_icra_jenis_aktivitas_proyek,user.pcra_icra_lokasi_kelompok_risiko_area,"+
                 "user.pcra_icra_kelas_risiko_pencegahan,user.pcra_icra_tindakan_pengendalian,user.pcra_icra_identifkasi_risiko_infeksi,user.pcra_icra_identifkasi_risiko_keselamatan,"+
-                "user.pcra_icra_identifkasi_risiko_kebakaran,user.pcra_icra_identifkasi_risiko_utilitas,user.bpjs_daftar_resep_apotek from user where user.id_user=AES_ENCRYPT(?,'nur')");
+                "user.pcra_icra_identifkasi_risiko_kebakaran,user.pcra_icra_identifkasi_risiko_utilitas,user.bpjs_daftar_resep_apotek,user.daftar_permintaan_resep_iterasi_bpjs,"+
+                "user.pcra_icra_pengkajian_risiko_prakonstruksi,user.pcra_icra_persyaratan_harus_dipenuhi,user.satu_sehat_kirim_questionresponse_telaah_farmasi,"+
+                "user.satu_sehat_kirim_allergy_intolerance,user.konsultasi_perawat,user.jawaban_konsultasi_perawat,user.bridging_smart_klaim_bpjs,user.mapping_prosedur_smart_klaim_bpjs,"+
+                "user.mapping_penyakit_smart_klaim_bpjs,user.permintaan_binrohtal,user.surat_permintaan_perlindungan_dari_kekerasan,user.surat_permohonan_privasi,"+
+                "user.surat_permintaan_second_opinion,user.surat_keterangan_berobat,user.surat_penolakan_resusitasi,user.catatan_observasi_ruang_ok,user.hasil_pemeriksaan_usg_abdomen,"+
+                "user.intervensi_nyeri_farmakologi,user.intervensi_nyeri_nonfarmakologi,user.surat_pengajuan_cuti_pasien,user.checklist_kriteria_masuk_isolasi,user.satu_sehat_mapping_kptl_tindakan_ralan,"+
+                "user.satu_sehat_mapping_kptl_tindakan_ranap,user.satu_sehat_mapping_kptl_tindakan_radiologi,user.satu_sehat_mapping_kptl_tindakan_laborat,user.satu_sehat_mapping_kptl_tindakan_operasi,"+
+                "user.satu_sehat_mapping_kptl_tarif_kamar,user.checklist_kriteria_keluar_isolasi,user.satu_sehat_tanda_tangan_elektronik,user.satu_sehat_kirim_composition,"+
+                "user.ringkasan_hutang_vendor_inventaris,user.ringkasan_beban_hutang_lain,user.set_resep_per_cara_bayar,user.skrining_tolac,user.admisi_skoring_tolac from user where user.id_user=AES_ENCRYPT(?,'nur')");
             try {
                 ps.setString(1,user);
                 rs=ps.executeQuery();
@@ -1297,7 +1319,12 @@ public class DlgUpdateUser extends javax.swing.JDialog {
                     penilaian_awal_medis_ralan_urologi=rs.getBoolean("penilaian_awal_medis_ralan_urologi");hasil_pemeriksaan_treadmill=rs.getBoolean("hasil_pemeriksaan_treadmill");hasil_pemeriksaan_echo_pediatrik=rs.getBoolean("hasil_pemeriksaan_echo_pediatrik");template_pelaksanaan_informasi_edukasi=rs.getBoolean("template_pelaksanaan_informasi_edukasi");skrining_instrumen_esat=rs.getBoolean("skrining_instrumen_esat");penilaian_awal_medis_ranap_jantung=rs.getBoolean("penilaian_awal_medis_ranap_jantung");penugasan_pengujian_sampel_lab_kesehatan_lingkungan=rs.getBoolean("penugasan_pengujian_sampel_lab_kesehatan_lingkungan");
                     hasil_pengujian_sampel_lab_kesehatan_lingkungan=rs.getBoolean("hasil_pengujian_sampel_lab_kesehatan_lingkungan");verifikasi_pengujian_sampel_lab_kesehatan_lingkungan=rs.getBoolean("verifikasi_pengujian_sampel_lab_kesehatan_lingkungan");validasi_pengujian_sampel_lab_kesehatan_lingkungan=rs.getBoolean("validasi_pengujian_sampel_lab_kesehatan_lingkungan");rekap_pelayanan_lab_kesehatan_lingkungan=rs.getBoolean("rekap_pelayanan_lab_kesehatan_lingkungan");pembayaran_pengujian_sampel_lab_kesehatan_lingkungan=rs.getBoolean("pembayaran_pengujian_sampel_lab_kesehatan_lingkungan");skrining_curb65=rs.getBoolean("skrining_curb65");
                     bpjs_potensi_prb=rs.getBoolean("bpjs_potensi_prb");bpjs_riwayat_pelayanan_obat=rs.getBoolean("bpjs_riwayat_pelayanan_obat");skrining_gizi_kehamilan=rs.getBoolean("skrining_gizi_kehamilan");bpjs_rekap_peserta_prb_apotek=rs.getBoolean("bpjs_rekap_peserta_prb_apotek");serah_terima_anggota_tubuh_barang=rs.getBoolean("serah_terima_anggota_tubuh_barang");pcra_icra_jenis_aktivitas_proyek=rs.getBoolean("pcra_icra_jenis_aktivitas_proyek");pcra_icra_lokasi_kelompok_risiko_area=rs.getBoolean("pcra_icra_lokasi_kelompok_risiko_area");pcra_icra_kelas_risiko_pencegahan=rs.getBoolean("pcra_icra_kelas_risiko_pencegahan");
-                    pcra_icra_tindakan_pengendalian=rs.getBoolean("pcra_icra_tindakan_pengendalian");pcra_icra_identifkasi_risiko_infeksi=rs.getBoolean("pcra_icra_identifkasi_risiko_infeksi");pcra_icra_identifkasi_risiko_keselamatan=rs.getBoolean("pcra_icra_identifkasi_risiko_keselamatan");pcra_icra_identifkasi_risiko_kebakaran=rs.getBoolean("pcra_icra_identifkasi_risiko_kebakaran");pcra_icra_identifkasi_risiko_utilitas=rs.getBoolean("pcra_icra_identifkasi_risiko_utilitas");bpjs_daftar_resep_apotek=rs.getBoolean("bpjs_daftar_resep_apotek");
+                    pcra_icra_tindakan_pengendalian=rs.getBoolean("pcra_icra_tindakan_pengendalian");pcra_icra_identifkasi_risiko_infeksi=rs.getBoolean("pcra_icra_identifkasi_risiko_infeksi");pcra_icra_identifkasi_risiko_keselamatan=rs.getBoolean("pcra_icra_identifkasi_risiko_keselamatan");pcra_icra_identifkasi_risiko_kebakaran=rs.getBoolean("pcra_icra_identifkasi_risiko_kebakaran");pcra_icra_identifkasi_risiko_utilitas=rs.getBoolean("pcra_icra_identifkasi_risiko_utilitas");bpjs_daftar_resep_apotek=rs.getBoolean("bpjs_daftar_resep_apotek");daftar_permintaan_resep_iterasi_bpjs=rs.getBoolean("daftar_permintaan_resep_iterasi_bpjs");
+                    pcra_icra_pengkajian_risiko_prakonstruksi=rs.getBoolean("pcra_icra_pengkajian_risiko_prakonstruksi");pcra_icra_persyaratan_harus_dipenuhi=rs.getBoolean("pcra_icra_persyaratan_harus_dipenuhi");satu_sehat_kirim_questionresponse_telaah_farmasi=rs.getBoolean("satu_sehat_kirim_questionresponse_telaah_farmasi");satu_sehat_kirim_allergy_intolerance=rs.getBoolean("satu_sehat_kirim_allergy_intolerance");konsultasi_perawat=rs.getBoolean("konsultasi_perawat");jawaban_konsultasi_perawat=rs.getBoolean("jawaban_konsultasi_perawat");bridging_smart_klaim_bpjs=rs.getBoolean("bridging_smart_klaim_bpjs");
+                    mapping_prosedur_smart_klaim_bpjs=rs.getBoolean("mapping_prosedur_smart_klaim_bpjs");mapping_penyakit_smart_klaim_bpjs=rs.getBoolean("mapping_penyakit_smart_klaim_bpjs");permintaan_binrohtal=rs.getBoolean("permintaan_binrohtal");surat_permintaan_perlindungan_dari_kekerasan=rs.getBoolean("surat_permintaan_perlindungan_dari_kekerasan");surat_permohonan_privasi=rs.getBoolean("surat_permohonan_privasi");surat_permintaan_second_opinion=rs.getBoolean("surat_permintaan_second_opinion");surat_keterangan_berobat=rs.getBoolean("surat_keterangan_berobat");surat_penolakan_resusitasi=rs.getBoolean("surat_penolakan_resusitasi");
+                    catatan_observasi_ruang_ok=rs.getBoolean("catatan_observasi_ruang_ok");hasil_pemeriksaan_usg_abdomen=rs.getBoolean("hasil_pemeriksaan_usg_abdomen");intervensi_nyeri_farmakologi=rs.getBoolean("intervensi_nyeri_farmakologi");intervensi_nyeri_nonfarmakologi=rs.getBoolean("intervensi_nyeri_nonfarmakologi");surat_pengajuan_cuti_pasien=rs.getBoolean("surat_pengajuan_cuti_pasien");checklist_kriteria_masuk_isolasi=rs.getBoolean("checklist_kriteria_masuk_isolasi");satu_sehat_mapping_kptl_tindakan_ralan=rs.getBoolean("satu_sehat_mapping_kptl_tindakan_ralan");
+                    satu_sehat_mapping_kptl_tindakan_ranap=rs.getBoolean("satu_sehat_mapping_kptl_tindakan_ranap");satu_sehat_mapping_kptl_tindakan_radiologi=rs.getBoolean("satu_sehat_mapping_kptl_tindakan_radiologi");satu_sehat_mapping_kptl_tindakan_laborat=rs.getBoolean("satu_sehat_mapping_kptl_tindakan_laborat");satu_sehat_mapping_kptl_tindakan_operasi=rs.getBoolean("satu_sehat_mapping_kptl_tindakan_operasi");satu_sehat_mapping_kptl_tarif_kamar=rs.getBoolean("satu_sehat_mapping_kptl_tarif_kamar");checklist_kriteria_keluar_isolasi=rs.getBoolean("checklist_kriteria_keluar_isolasi");
+                    satu_sehat_tanda_tangan_elektronik=rs.getBoolean("satu_sehat_tanda_tangan_elektronik");satu_sehat_kirim_composition=rs.getBoolean("satu_sehat_kirim_composition");ringkasan_hutang_vendor_inventaris=rs.getBoolean("ringkasan_hutang_vendor_inventaris");ringkasan_beban_hutang_lain=rs.getBoolean("ringkasan_beban_hutang_lain");set_resep_per_cara_bayar=rs.getBoolean("set_resep_per_cara_bayar");skrining_tolac=rs.getBoolean("skrining_tolac");admisi_skoring_tolac=rs.getBoolean("admisi_skoring_tolac");
                     setTampil();setTampil2();
                 }       
                 LCount.setText(""+tabMode.getRowCount());
@@ -2058,8 +2085,8 @@ public class DlgUpdateUser extends javax.swing.JDialog {
             tabMode.addRow(new Object[]{false,"[D]Stok Akhir Farmasi Per Tanggal",stok_akhir_farmasi_pertanggal});
         }
 
-        if("[D]Telaah Resep & Obat".toLowerCase().contains(TCari.getText().toLowerCase())){
-            tabMode.addRow(new Object[]{false,"[D]Telaah Resep & Obat",telaah_resep});
+        if("[D]Pengkajian Resep & Obat".toLowerCase().contains(TCari.getText().toLowerCase())){
+            tabMode.addRow(new Object[]{false,"[D]Pengkajian Resep & Obat",telaah_resep});
         }
 
         if("[D]Permintaan Resep Pulang".toLowerCase().contains(TCari.getText().toLowerCase())){
@@ -3397,6 +3424,14 @@ public class DlgUpdateUser extends javax.swing.JDialog {
         if("[K]Bayar Beban Hutang Lain".toLowerCase().contains(TCari.getText().toLowerCase())){
             tabMode.addRow(new Object[]{false,"[K]Bayar Beban Hutang Lain",bayar_beban_hutang_lain});
         }
+        
+        if("[K]Ringkasan Hutang Vendor Aset/Inventaris".toLowerCase().contains(TCari.getText().toLowerCase())){
+            tabMode.addRow(new Object[]{false,"[K]Ringkasan Hutang Vendor Aset/Inventaris",ringkasan_hutang_vendor_inventaris});
+        }
+        
+        if("[K]Ringkasan Beban Hutang Lain".toLowerCase().contains(TCari.getText().toLowerCase())){
+            tabMode.addRow(new Object[]{false,"[K]Ringkasan Beban Hutang Lain",ringkasan_beban_hutang_lain});
+        }
     }
     
     private void setTampil2(){
@@ -4078,6 +4113,62 @@ public class DlgUpdateUser extends javax.swing.JDialog {
         
         if("[L]Daftar Resep Apotek BPJS".toLowerCase().contains(TCari.getText().toLowerCase())){
             tabMode.addRow(new Object[]{false,"[L]Daftar Resep Apotek BPJS",bpjs_daftar_resep_apotek});
+        }
+        
+        if("[L]Permintaan Resep Iterasi Apotek BPJS".toLowerCase().contains(TCari.getText().toLowerCase())){
+            tabMode.addRow(new Object[]{false,"[L]Permintaan Resep Iterasi Apotek BPJS",daftar_permintaan_resep_iterasi_bpjs});
+        }
+        
+        if("[L]Kirim Q.R. Telaah Farmasi Satu Sehat".toLowerCase().contains(TCari.getText().toLowerCase())){
+            tabMode.addRow(new Object[]{false,"[L]Kirim Q.R. Telaah Farmasi Satu Sehat",satu_sehat_kirim_questionresponse_telaah_farmasi});
+        }
+        
+        if("[L]Kirim Allergy Intolerance Satu Sehat".toLowerCase().contains(TCari.getText().toLowerCase())){
+            tabMode.addRow(new Object[]{false,"[L]Kirim Allergy Intolerance Satu Sehat",satu_sehat_kirim_allergy_intolerance});
+        }
+        
+        if("[L]Kirim FHIR Smart Klaim BPJS".toLowerCase().contains(TCari.getText().toLowerCase())){
+            tabMode.addRow(new Object[]{false,"[L]Kirim FHIR Smart Klaim BPJS",bridging_smart_klaim_bpjs});
+        }
+        
+        if("[L]Mapping Prosedur Smart Klaim BPJS".toLowerCase().contains(TCari.getText().toLowerCase())){
+            tabMode.addRow(new Object[]{false,"[L]Mapping Prosedur Smart Klaim BPJS",mapping_prosedur_smart_klaim_bpjs});
+        }
+        
+        if("[L]Mapping Penyakit Smart Klaim BPJS".toLowerCase().contains(TCari.getText().toLowerCase())){
+            tabMode.addRow(new Object[]{false,"[L]Mapping Penyakit Smart Klaim BPJS",mapping_penyakit_smart_klaim_bpjs});
+        }
+        
+        if("[L]Mapping Tindakan Ralan KPTL Satu Sehat".toLowerCase().contains(TCari.getText().toLowerCase())){
+            tabMode.addRow(new Object[]{false,"[L]Mapping Tindakan Ralan KPTL Satu Sehat",satu_sehat_mapping_kptl_tindakan_ralan});
+        }
+        
+        if("[L]Mapping Tindakan Ranap KPTL Satu Sehat".toLowerCase().contains(TCari.getText().toLowerCase())){
+            tabMode.addRow(new Object[]{false,"[L]Mapping Tindakan Ranap KPTL Satu Sehat",satu_sehat_mapping_kptl_tindakan_ranap});
+        }
+        
+        if("[L]Mapping Tindakan Radiologi KPTL Satu Sehat".toLowerCase().contains(TCari.getText().toLowerCase())){
+            tabMode.addRow(new Object[]{false,"[L]Mapping Tindakan Radiologi KPTL Satu Sehat",satu_sehat_mapping_kptl_tindakan_radiologi});
+        }
+        
+        if("[L]Mapping Tindakan Laborat KPTL Satu Sehat".toLowerCase().contains(TCari.getText().toLowerCase())){
+            tabMode.addRow(new Object[]{false,"[L]Mapping Tindakan Laborat KPTL Satu Sehat",satu_sehat_mapping_kptl_tindakan_laborat});
+        }
+        
+        if("[L]Mapping Tindakan Operasi KPTL Satu Sehat".toLowerCase().contains(TCari.getText().toLowerCase())){
+            tabMode.addRow(new Object[]{false,"[L]Mapping Tindakan Operasi KPTL Satu Sehat",satu_sehat_mapping_kptl_tindakan_operasi});
+        }
+        
+        if("[L]Mapping Tarif Kamar KPTL Satu Sehat".toLowerCase().contains(TCari.getText().toLowerCase())){
+            tabMode.addRow(new Object[]{false,"[L]Mapping Tarif Kamar KPTL Satu Sehat",satu_sehat_mapping_kptl_tarif_kamar});
+        }
+        
+        if("[L]Bridging TTE Satu Sehat".toLowerCase().contains(TCari.getText().toLowerCase())){
+            tabMode.addRow(new Object[]{false,"[L]Bridging TTE Satu Sehat",satu_sehat_tanda_tangan_elektronik});
+        }
+        
+        if("[L]Kirim Composition Satu Sehat".toLowerCase().contains(TCari.getText().toLowerCase())){
+            tabMode.addRow(new Object[]{false,"[L]Kirim Composition Satu Sehat",satu_sehat_kirim_composition});
         }
 
         if("[M]Pasien".toLowerCase().contains(TCari.getText().toLowerCase())){
@@ -5055,6 +5146,46 @@ public class DlgUpdateUser extends javax.swing.JDialog {
         if("[M]Skrining Gizi Kehamilan".toLowerCase().contains(TCari.getText().toLowerCase())){
             tabMode.addRow(new Object[]{false,"[M]Skrining Gizi Kehamilan",skrining_gizi_kehamilan});
         }
+        
+        if("[M]Konsultasi Perawat".toLowerCase().contains(TCari.getText().toLowerCase())){
+            tabMode.addRow(new Object[]{false,"[M]Konsultasi Perawat",konsultasi_perawat});
+        }
+        
+        if("[M]Jawaban Konsultasi Perawat".toLowerCase().contains(TCari.getText().toLowerCase())){
+            tabMode.addRow(new Object[]{false,"[M]Jawaban Konsultasi Perawat",jawaban_konsultasi_perawat});
+        }
+        
+        if("[M]Catatan Observasi Ruang Operasi".toLowerCase().contains(TCari.getText().toLowerCase())){
+            tabMode.addRow(new Object[]{false,"[M]Catatan Observasi Ruang Operasi",catatan_observasi_ruang_ok});
+        }
+        
+        if("[M]Hasil USG Abdomen".toLowerCase().contains(TCari.getText().toLowerCase())){
+            tabMode.addRow(new Object[]{false,"[M]Hasil USG Abdomen",hasil_pemeriksaan_usg_abdomen});
+        }
+        
+        if("[M]Intervensi Nyeri Farmakologi".toLowerCase().contains(TCari.getText().toLowerCase())){
+            tabMode.addRow(new Object[]{false,"[M]Intervensi Nyeri Farmakologi",intervensi_nyeri_farmakologi});
+        }
+        
+        if("[M]Intervensi Nyeri Non Farmakologi".toLowerCase().contains(TCari.getText().toLowerCase())){
+            tabMode.addRow(new Object[]{false,"[M]Intervensi Nyeri Non Farmakologi",intervensi_nyeri_nonfarmakologi});
+        }
+        
+        if("[M]Check List Kriteria Masuk Isolasi".toLowerCase().contains(TCari.getText().toLowerCase())){
+            tabMode.addRow(new Object[]{false,"[M]Check List Kriteria Masuk Isolasi",checklist_kriteria_masuk_isolasi});
+        }
+        
+        if("[M]Check List Kriteria Keluar Isolasi".toLowerCase().contains(TCari.getText().toLowerCase())){
+            tabMode.addRow(new Object[]{false,"[M]Check List Kriteria Keluar Isolasi",checklist_kriteria_keluar_isolasi});
+        }
+        
+        if("[M]Skrining TOLAC".toLowerCase().contains(TCari.getText().toLowerCase())){
+            tabMode.addRow(new Object[]{false,"[M]Skrining TOLAC",skrining_tolac});
+        }
+        
+        if("[M]Admisi & Skoring TOLAC".toLowerCase().contains(TCari.getText().toLowerCase())){
+            tabMode.addRow(new Object[]{false,"[M]Admisi & Skoring TOLAC",admisi_skoring_tolac});
+        }
                 
         if("[N]Pengambilan BHP Medis".toLowerCase().contains(TCari.getText().toLowerCase())){
             tabMode.addRow(new Object[]{false,"[N]Pengambilan BHP Medis",pengambilan_utd2});
@@ -5704,6 +5835,34 @@ public class DlgUpdateUser extends javax.swing.JDialog {
             tabMode.addRow(new Object[]{false,"[P]Serah Terima Anggota Tubuh/Barang",serah_terima_anggota_tubuh_barang});
         }
         
+        if("[P]Persetujuan Bimbingan Rohani & Mental".toLowerCase().contains(TCari.getText().toLowerCase())){
+            tabMode.addRow(new Object[]{false,"[P]Persetujuan Bimbingan Rohani & Mental",permintaan_binrohtal});
+        }
+        
+        if("[P]Surat Permintaan Perlindungan Diri Dari Kekerasan".toLowerCase().contains(TCari.getText().toLowerCase())){
+            tabMode.addRow(new Object[]{false,"[P]Surat Permintaan Perlindungan Diri Dari Kekerasan",surat_permintaan_perlindungan_dari_kekerasan});
+        }
+        
+        if("[P]Surat Permohonan Privasi".toLowerCase().contains(TCari.getText().toLowerCase())){
+            tabMode.addRow(new Object[]{false,"[P]Surat Permohonan Privasi",surat_permohonan_privasi});
+        }
+        
+        if("[P]Surat Permintaan Second Opinion".toLowerCase().contains(TCari.getText().toLowerCase())){
+            tabMode.addRow(new Object[]{false,"[P]Surat Permintaan Second Opinion",surat_permintaan_second_opinion});
+        }
+        
+        if("[P]Surat Keterangan Berobat".toLowerCase().contains(TCari.getText().toLowerCase())){
+            tabMode.addRow(new Object[]{false,"[P]Surat Keterangan Berobat",surat_keterangan_berobat});
+        }
+        
+        if("[P]Surat Penolakan Resusitasi".toLowerCase().contains(TCari.getText().toLowerCase())){
+            tabMode.addRow(new Object[]{false,"[P]Surat Penolakan Resusitasi",surat_penolakan_resusitasi});
+        }
+        
+        if("[P]Surat Pengajuan Cuti Perawatan".toLowerCase().contains(TCari.getText().toLowerCase())){
+            tabMode.addRow(new Object[]{false,"[P]Surat Pengajuan Cuti Perawatan",surat_pengajuan_cuti_pasien});
+        }
+        
         if("[Q]Ruang Perpustakaan".toLowerCase().contains(TCari.getText().toLowerCase())){
             tabMode.addRow(new Object[]{false,"[Q]Ruang Perpustakaan",ruang_perpustakaan});
         }
@@ -5786,6 +5945,14 @@ public class DlgUpdateUser extends javax.swing.JDialog {
         
         if("[R]Identifikasi Risiko Utilitas PCRA".toLowerCase().contains(TCari.getText().toLowerCase())){
             tabMode.addRow(new Object[]{false,"[R]Identifikasi Risiko Utilitas PCRA",pcra_icra_identifkasi_risiko_utilitas});
+        }
+        
+        if("[R]Pengkajian Risiko Pra Konstruksi/PCRA".toLowerCase().contains(TCari.getText().toLowerCase())){
+            tabMode.addRow(new Object[]{false,"[R]Pengkajian Risiko Pra Konstruksi/PCRA",pcra_icra_pengkajian_risiko_prakonstruksi});
+        }
+        
+        if("[R]Persyaratan Harus Dipenuhi PCRA".toLowerCase().contains(TCari.getText().toLowerCase())){
+            tabMode.addRow(new Object[]{false,"[R]Persyaratan Harus Dipenuhi PCRA",pcra_icra_persyaratan_harus_dipenuhi});
         }
                 
         if("[S]Suplier Toko".toLowerCase().contains(TCari.getText().toLowerCase())){
@@ -6046,6 +6213,10 @@ public class DlgUpdateUser extends javax.swing.JDialog {
 
         if("[U]Integrasi Khanza Health Services".toLowerCase().contains(TCari.getText().toLowerCase())){
             tabMode.addRow(new Object[]{false,"[U]Integrasi Khanza Health Services",integrasi_khanza_health_services});
+        }
+        
+        if("[U]Set Resep Per Cara Bayar".toLowerCase().contains(TCari.getText().toLowerCase())){
+            tabMode.addRow(new Object[]{false,"[U]Set Resep Per Cara Bayar",set_resep_per_cara_bayar});
         }
     }
     
@@ -6799,7 +6970,7 @@ public class DlgUpdateUser extends javax.swing.JDialog {
                 Sequel.mengedit("user","id_user=AES_ENCRYPT('"+TKd.getText()+"','nur')","stok_akhir_farmasi_pertanggal='"+tbUser.getValueAt(i,2).toString()+"'");
             }
             
-            if("[D]Telaah Resep & Obat".equals(tbUser.getValueAt(i,1).toString())){
+            if("[D]Pengkajian Resep & Obat".equals(tbUser.getValueAt(i,1).toString())){
                 Sequel.mengedit("user","id_user=AES_ENCRYPT('"+TKd.getText()+"','nur')","telaah_resep='"+tbUser.getValueAt(i,2).toString()+"'");
             }
 
@@ -8138,6 +8309,14 @@ public class DlgUpdateUser extends javax.swing.JDialog {
             if("[K]Bayar Beban Hutang Lain".equals(tbUser.getValueAt(i,1).toString())){
                 Sequel.mengedit("user","id_user=AES_ENCRYPT('"+TKd.getText()+"','nur')","bayar_beban_hutang_lain='"+tbUser.getValueAt(i,2).toString()+"'");
             }
+            
+            if("[K]Ringkasan Hutang Vendor Aset/Inventaris".equals(tbUser.getValueAt(i,1).toString())){
+                Sequel.mengedit("user","id_user=AES_ENCRYPT('"+TKd.getText()+"','nur')","ringkasan_hutang_vendor_inventaris='"+tbUser.getValueAt(i,2).toString()+"'");
+            }
+            
+            if("[K]Ringkasan Beban Hutang Lain".equals(tbUser.getValueAt(i,1).toString())){
+                Sequel.mengedit("user","id_user=AES_ENCRYPT('"+TKd.getText()+"','nur')","ringkasan_beban_hutang_lain='"+tbUser.getValueAt(i,2).toString()+"'");
+            }
         }
     }
     
@@ -8822,7 +9001,63 @@ public class DlgUpdateUser extends javax.swing.JDialog {
             if("[L]Daftar Resep Apotek BPJS".equals(tbUser.getValueAt(i,1).toString())){
                 Sequel.mengedit("user","id_user=AES_ENCRYPT('"+TKd.getText()+"','nur')","bpjs_daftar_resep_apotek='"+tbUser.getValueAt(i,2).toString()+"'");
             }
-                    
+            
+            if("[L]Permintaan Resep Iterasi Apotek BPJS".equals(tbUser.getValueAt(i,1).toString())){
+                Sequel.mengedit("user","id_user=AES_ENCRYPT('"+TKd.getText()+"','nur')","daftar_permintaan_resep_iterasi_bpjs='"+tbUser.getValueAt(i,2).toString()+"'");
+            }
+            
+            if("[L]Kirim Q.R. Telaah Farmasi Satu Sehat".equals(tbUser.getValueAt(i,1).toString())){
+                Sequel.mengedit("user","id_user=AES_ENCRYPT('"+TKd.getText()+"','nur')","satu_sehat_kirim_questionresponse_telaah_farmasi='"+tbUser.getValueAt(i,2).toString()+"'");
+            }
+            
+            if("[L]Kirim Allergy Intolerance Satu Sehat".equals(tbUser.getValueAt(i,1).toString())){
+                Sequel.mengedit("user","id_user=AES_ENCRYPT('"+TKd.getText()+"','nur')","satu_sehat_kirim_allergy_intolerance='"+tbUser.getValueAt(i,2).toString()+"'");
+            }
+            
+            if("[L]Kirim FHIR Smart Klaim BPJS".equals(tbUser.getValueAt(i,1).toString())){
+                Sequel.mengedit("user","id_user=AES_ENCRYPT('"+TKd.getText()+"','nur')","bridging_smart_klaim_bpjs='"+tbUser.getValueAt(i,2).toString()+"'");
+            }
+            
+            if("[L]Mapping Prosedur Smart Klaim BPJS".equals(tbUser.getValueAt(i,1).toString())){
+                Sequel.mengedit("user","id_user=AES_ENCRYPT('"+TKd.getText()+"','nur')","mapping_prosedur_smart_klaim_bpjs='"+tbUser.getValueAt(i,2).toString()+"'");
+            }
+            
+            if("[L]Mapping Penyakit Smart Klaim BPJS".equals(tbUser.getValueAt(i,1).toString())){
+                Sequel.mengedit("user","id_user=AES_ENCRYPT('"+TKd.getText()+"','nur')","mapping_penyakit_smart_klaim_bpjs='"+tbUser.getValueAt(i,2).toString()+"'");
+            }
+            
+            if("[L]Mapping Tindakan Ralan KPTL Satu Sehat".equals(tbUser.getValueAt(i,1).toString())){
+                Sequel.mengedit("user","id_user=AES_ENCRYPT('"+TKd.getText()+"','nur')","satu_sehat_mapping_kptl_tindakan_ralan='"+tbUser.getValueAt(i,2).toString()+"'");
+            }
+            
+            if("[L]Mapping Tindakan Ranap KPTL Satu Sehat".equals(tbUser.getValueAt(i,1).toString())){
+                Sequel.mengedit("user","id_user=AES_ENCRYPT('"+TKd.getText()+"','nur')","satu_sehat_mapping_kptl_tindakan_ranap='"+tbUser.getValueAt(i,2).toString()+"'");
+            }
+            
+            if("[L]Mapping Tindakan Radiologi KPTL Satu Sehat".equals(tbUser.getValueAt(i,1).toString())){
+                Sequel.mengedit("user","id_user=AES_ENCRYPT('"+TKd.getText()+"','nur')","satu_sehat_mapping_kptl_tindakan_radiologi='"+tbUser.getValueAt(i,2).toString()+"'");
+            }
+            
+            if("[L]Mapping Tindakan Laborat KPTL Satu Sehat".equals(tbUser.getValueAt(i,1).toString())){
+                Sequel.mengedit("user","id_user=AES_ENCRYPT('"+TKd.getText()+"','nur')","satu_sehat_mapping_kptl_tindakan_laborat='"+tbUser.getValueAt(i,2).toString()+"'");
+            }
+            
+            if("[L]Mapping Tindakan Operasi KPTL Satu Sehat".equals(tbUser.getValueAt(i,1).toString())){
+                Sequel.mengedit("user","id_user=AES_ENCRYPT('"+TKd.getText()+"','nur')","satu_sehat_mapping_kptl_tindakan_operasi='"+tbUser.getValueAt(i,2).toString()+"'");
+            }
+            
+            if("[L]Mapping Tarif Kamar KPTL Satu Sehat".equals(tbUser.getValueAt(i,1).toString())){
+                Sequel.mengedit("user","id_user=AES_ENCRYPT('"+TKd.getText()+"','nur')","satu_sehat_mapping_kptl_tarif_kamar='"+tbUser.getValueAt(i,2).toString()+"'");
+            }
+            
+            if("[L]Bridging TTE Satu Sehat".equals(tbUser.getValueAt(i,1).toString())){
+                Sequel.mengedit("user","id_user=AES_ENCRYPT('"+TKd.getText()+"','nur')","satu_sehat_tanda_tangan_elektronik='"+tbUser.getValueAt(i,2).toString()+"'");
+            }
+            
+            if("[L]Kirim Composition Satu Sehat".equals(tbUser.getValueAt(i,1).toString())){
+                Sequel.mengedit("user","id_user=AES_ENCRYPT('"+TKd.getText()+"','nur')","satu_sehat_kirim_composition='"+tbUser.getValueAt(i,2).toString()+"'");
+            }
+            
             if("[M]Pasien".equals(tbUser.getValueAt(i,1).toString())){
                 Sequel.mengedit("user","id_user=AES_ENCRYPT('"+TKd.getText()+"','nur')","pasien='"+tbUser.getValueAt(i,2).toString()+"'");
             }
@@ -9798,7 +10033,47 @@ public class DlgUpdateUser extends javax.swing.JDialog {
             if("[M]Skrining Gizi Kehamilan".equals(tbUser.getValueAt(i,1).toString())){
                 Sequel.mengedit("user","id_user=AES_ENCRYPT('"+TKd.getText()+"','nur')","skrining_gizi_kehamilan='"+tbUser.getValueAt(i,2).toString()+"'");
             }
-                    
+                 
+            if("[M]Konsultasi Perawat".equals(tbUser.getValueAt(i,1).toString())){
+                Sequel.mengedit("user","id_user=AES_ENCRYPT('"+TKd.getText()+"','nur')","konsultasi_perawat='"+tbUser.getValueAt(i,2).toString()+"'");
+            }
+            
+            if("[M]Jawaban Konsultasi Perawat".equals(tbUser.getValueAt(i,1).toString())){
+                Sequel.mengedit("user","id_user=AES_ENCRYPT('"+TKd.getText()+"','nur')","jawaban_konsultasi_perawat='"+tbUser.getValueAt(i,2).toString()+"'");
+            }
+            
+            if("[M]Catatan Observasi Ruang Operasi".equals(tbUser.getValueAt(i,1).toString())){
+                Sequel.mengedit("user","id_user=AES_ENCRYPT('"+TKd.getText()+"','nur')","catatan_observasi_ruang_ok='"+tbUser.getValueAt(i,2).toString()+"'");
+            }
+            
+            if("[M]Hasil USG Abdomen".equals(tbUser.getValueAt(i,1).toString())){
+                Sequel.mengedit("user","id_user=AES_ENCRYPT('"+TKd.getText()+"','nur')","hasil_pemeriksaan_usg_abdomen='"+tbUser.getValueAt(i,2).toString()+"'");
+            }
+            
+            if("[M]Intervensi Nyeri Farmakologi".equals(tbUser.getValueAt(i,1).toString())){
+                Sequel.mengedit("user","id_user=AES_ENCRYPT('"+TKd.getText()+"','nur')","intervensi_nyeri_farmakologi='"+tbUser.getValueAt(i,2).toString()+"'");
+            }
+            
+            if("[M]Intervensi Nyeri Non Farmakologi".equals(tbUser.getValueAt(i,1).toString())){
+                Sequel.mengedit("user","id_user=AES_ENCRYPT('"+TKd.getText()+"','nur')","intervensi_nyeri_nonfarmakologi='"+tbUser.getValueAt(i,2).toString()+"'");
+            }
+            
+            if("[M]Check List Kriteria Masuk Isolasi".equals(tbUser.getValueAt(i,1).toString())){
+                Sequel.mengedit("user","id_user=AES_ENCRYPT('"+TKd.getText()+"','nur')","checklist_kriteria_masuk_isolasi='"+tbUser.getValueAt(i,2).toString()+"'");
+            }
+            
+            if("[M]Check List Kriteria Keluar Isolasi".equals(tbUser.getValueAt(i,1).toString())){
+                Sequel.mengedit("user","id_user=AES_ENCRYPT('"+TKd.getText()+"','nur')","checklist_kriteria_keluar_isolasi='"+tbUser.getValueAt(i,2).toString()+"'");
+            }
+            
+            if("[M]Skrining TOLAC".equals(tbUser.getValueAt(i,1).toString())){
+                Sequel.mengedit("user","id_user=AES_ENCRYPT('"+TKd.getText()+"','nur')","skrining_tolac='"+tbUser.getValueAt(i,2).toString()+"'");
+            }
+            
+            if("[M]Admisi & Skoring TOLAC".equals(tbUser.getValueAt(i,1).toString())){
+                Sequel.mengedit("user","id_user=AES_ENCRYPT('"+TKd.getText()+"','nur')","admisi_skoring_tolac='"+tbUser.getValueAt(i,2).toString()+"'");
+            }
+            
             if("[N]Pengambilan BHP Medis".equals(tbUser.getValueAt(i,1).toString())){
                 Sequel.mengedit("user","id_user=AES_ENCRYPT('"+TKd.getText()+"','nur')","pengambilan_utd2='"+tbUser.getValueAt(i,2).toString()+"'");
             }
@@ -10450,7 +10725,35 @@ public class DlgUpdateUser extends javax.swing.JDialog {
             if("[P]Serah Terima Anggota Tubuh/Barang".equals(tbUser.getValueAt(i,1).toString())){
                 Sequel.mengedit("user","id_user=AES_ENCRYPT('"+TKd.getText()+"','nur')","serah_terima_anggota_tubuh_barang='"+tbUser.getValueAt(i,2).toString()+"'");
             }
+            
+            if("[P]Persetujuan Bimbingan Rohani & Mental".equals(tbUser.getValueAt(i,1).toString())){
+                Sequel.mengedit("user","id_user=AES_ENCRYPT('"+TKd.getText()+"','nur')","permintaan_binrohtal='"+tbUser.getValueAt(i,2).toString()+"'");
+            }
+            
+            if("[P]Surat Permintaan Perlindungan Diri Dari Kekerasan".equals(tbUser.getValueAt(i,1).toString())){
+                Sequel.mengedit("user","id_user=AES_ENCRYPT('"+TKd.getText()+"','nur')","surat_permintaan_perlindungan_dari_kekerasan='"+tbUser.getValueAt(i,2).toString()+"'");
+            }
+            
+            if("[P]Surat Permohonan Privasi".equals(tbUser.getValueAt(i,1).toString())){
+                Sequel.mengedit("user","id_user=AES_ENCRYPT('"+TKd.getText()+"','nur')","surat_permohonan_privasi='"+tbUser.getValueAt(i,2).toString()+"'");
+            }
 
+            if("[P]Surat Permintaan Second Opinion".equals(tbUser.getValueAt(i,1).toString())){
+                Sequel.mengedit("user","id_user=AES_ENCRYPT('"+TKd.getText()+"','nur')","surat_permintaan_second_opinion='"+tbUser.getValueAt(i,2).toString()+"'");
+            }
+            
+            if("[P]Surat Keterangan Berobat".equals(tbUser.getValueAt(i,1).toString())){
+                Sequel.mengedit("user","id_user=AES_ENCRYPT('"+TKd.getText()+"','nur')","surat_keterangan_berobat='"+tbUser.getValueAt(i,2).toString()+"'");
+            }
+            
+            if("[P]Surat Penolakan Resusitasi".equals(tbUser.getValueAt(i,1).toString())){
+                Sequel.mengedit("user","id_user=AES_ENCRYPT('"+TKd.getText()+"','nur')","surat_penolakan_resusitasi='"+tbUser.getValueAt(i,2).toString()+"'");
+            }
+            
+            if("[P]Surat Pengajuan Cuti Perawatan".equals(tbUser.getValueAt(i,1).toString())){
+                Sequel.mengedit("user","id_user=AES_ENCRYPT('"+TKd.getText()+"','nur')","surat_pengajuan_cuti_pasien='"+tbUser.getValueAt(i,2).toString()+"'");
+            }
+                    
             if("[Q]Ruang Perpustakaan".equals(tbUser.getValueAt(i,1).toString())){
                 Sequel.mengedit("user","id_user=AES_ENCRYPT('"+TKd.getText()+"','nur')","ruang_perpustakaan='"+tbUser.getValueAt(i,2).toString()+"'");
             }
@@ -10533,6 +10836,14 @@ public class DlgUpdateUser extends javax.swing.JDialog {
             
             if("[R]Identifikasi Risiko Utilitas PCRA".equals(tbUser.getValueAt(i,1).toString())){
                 Sequel.mengedit("user","id_user=AES_ENCRYPT('"+TKd.getText()+"','nur')","pcra_icra_identifkasi_risiko_utilitas='"+tbUser.getValueAt(i,2).toString()+"'");
+            }
+            
+            if("[R]Pengkajian Risiko Pra Konstruksi/PCRA".equals(tbUser.getValueAt(i,1).toString())){
+                Sequel.mengedit("user","id_user=AES_ENCRYPT('"+TKd.getText()+"','nur')","pcra_icra_pengkajian_risiko_prakonstruksi='"+tbUser.getValueAt(i,2).toString()+"'");
+            }
+            
+            if("[R]Persyaratan Harus Dipenuhi PCRA".equals(tbUser.getValueAt(i,1).toString())){
+                Sequel.mengedit("user","id_user=AES_ENCRYPT('"+TKd.getText()+"','nur')","pcra_icra_persyaratan_harus_dipenuhi='"+tbUser.getValueAt(i,2).toString()+"'");
             }
                     
             if("[S]Suplier Toko".equals(tbUser.getValueAt(i,1).toString())){
@@ -10793,6 +11104,10 @@ public class DlgUpdateUser extends javax.swing.JDialog {
             
             if("[U]Integrasi Khanza Health Services".equals(tbUser.getValueAt(i,1).toString())){
                 Sequel.mengedit("user","id_user=AES_ENCRYPT('"+TKd.getText()+"','nur')","integrasi_khanza_health_services='"+tbUser.getValueAt(i,2).toString()+"'");
+            }
+            
+            if("[U]Set Resep Per Cara Bayar".equals(tbUser.getValueAt(i,1).toString())){
+                Sequel.mengedit("user","id_user=AES_ENCRYPT('"+TKd.getText()+"','nur')","set_resep_per_cara_bayar='"+tbUser.getValueAt(i,2).toString()+"'");
             }
         }
         JOptionPane.showMessageDialog(null,"Proses update hak akses selesai..!!");

@@ -621,7 +621,7 @@ public final class RMPenilaianAwalKeperawatanRalanPsikiatri extends javax.swing.
         BtnPrint = new widget.Button();
         BtnAll = new widget.Button();
         BtnKeluar = new widget.Button();
-        TabRawat = new javax.swing.JTabbedPane();
+        TabRawat = new widget.TabPane();
         internalFrame2 = new widget.InternalFrame();
         scrollInput = new widget.ScrollPane();
         FormInput = new widget.PanelBiasa();
@@ -898,7 +898,7 @@ public final class RMPenilaianAwalKeperawatanRalanPsikiatri extends javax.swing.
         KetLaporResikoJatuh = new widget.TextBox();
         Scroll6 = new widget.ScrollPane();
         tbMasalahKeperawatan = new widget.Table();
-        TabRencanaKeperawatan = new javax.swing.JTabbedPane();
+        TabRencanaKeperawatan = new widget.TabPane();
         panelBiasa1 = new widget.PanelBiasa();
         Scroll8 = new widget.ScrollPane();
         tbRencanaKeperawatan = new widget.Table();
@@ -5231,8 +5231,8 @@ public final class RMPenilaianAwalKeperawatanRalanPsikiatri extends javax.swing.
     private widget.TextBox TNoRw;
     private widget.TextBox TPasien;
     private widget.TextBox TPasien1;
-    private javax.swing.JTabbedPane TabRawat;
-    private javax.swing.JTabbedPane TabRencanaKeperawatan;
+    private widget.TabPane TabRawat;
+    private widget.TabPane TabRencanaKeperawatan;
     private widget.TextBox TanggalRegistrasi;
     private widget.Tanggal TglAsuhan;
     private widget.TextBox TglLahir;
@@ -5912,6 +5912,8 @@ public final class RMPenilaianAwalKeperawatanRalanPsikiatri extends javax.swing.
             iyembuilder=null;
         }catch(Exception e){
             System.out.println("Notifikasi : "+e);
+        }finally {
+            if (fileWriter != null) try { fileWriter.close(); } catch (Exception e) {}
         }
     }
     
@@ -5965,6 +5967,10 @@ public final class RMPenilaianAwalKeperawatanRalanPsikiatri extends javax.swing.
             myObj.close();
         }catch(Exception e){
             System.out.println("Notifikasi : "+e);
+        }finally {
+            if (myObj != null) try { myObj.close(); } catch (Exception e) {}
+            response = null;
+            root = null;
         }
     }
     
@@ -6001,6 +6007,8 @@ public final class RMPenilaianAwalKeperawatanRalanPsikiatri extends javax.swing.
             iyembuilder=null;
         }catch(Exception e){
             System.out.println("Notifikasi : "+e);
+        }finally {
+            if (fileWriter != null) try { fileWriter.close(); } catch (Exception e) {}
         }
     }
     
@@ -6059,6 +6067,10 @@ public final class RMPenilaianAwalKeperawatanRalanPsikiatri extends javax.swing.
             myObj.close();
         }catch(Exception e){
             System.out.println("Notifikasi : "+e);
+        }finally {
+            if (myObj != null) try { myObj.close(); } catch (Exception e) {}
+            response = null;
+            root = null;
         }
     }
     

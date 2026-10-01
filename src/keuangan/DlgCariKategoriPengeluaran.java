@@ -256,12 +256,18 @@ public final class DlgCariKategoriPengeluaran extends javax.swing.JDialog {
             try {
                 rs=ps.executeQuery();
                 if(rs.next()){
-                    file=new File("./cache/akunbankmandiri.iyem");
-                    file.createNewFile();
-                    fileWriter = new FileWriter(file);
-                    fileWriter.write("{\"akunbankmandiri\":\""+rs.getString("kd_rek")+"\",\"kodemcm\":\""+rs.getString("kode_mcm")+"\",\"akunbiayabankmandiri\":\""+rs.getString("kd_rek_biaya")+"\",\"norekening\":\""+rs.getString("no_rekening")+"\"}");
-                    fileWriter.flush();
-                    fileWriter.close();
+                    try{
+                        file=new File("./cache/akunbankmandiri.iyem");
+                        file.createNewFile();
+                        fileWriter = new FileWriter(file);
+                        fileWriter.write("{\"akunbankmandiri\":\""+rs.getString("kd_rek")+"\",\"kodemcm\":\""+rs.getString("kode_mcm")+"\",\"akunbiayabankmandiri\":\""+rs.getString("kd_rek_biaya")+"\",\"norekening\":\""+rs.getString("no_rekening")+"\"}");
+                        fileWriter.flush();
+                        fileWriter.close();
+                    }catch(Exception e){
+                        System.out.println("Notifikasi : "+e);
+                    }finally {
+                        if (fileWriter != null) try { fileWriter.close(); } catch (Exception e) {}
+                    }
                 }
             } catch (Exception e) {
                 System.out.println("Notif Nota : "+e);
@@ -376,10 +382,13 @@ public final class DlgCariKategoriPengeluaran extends javax.swing.JDialog {
             fileWriter = new FileWriter(file);
             StringBuilder iyembuilder = new StringBuilder();
             ps=koneksi.prepareStatement(
-                     "select kategori_pengeluaran_harian.kode_kategori,kategori_pengeluaran_harian.nama_kategori,akun1.nm_rek as akun1,akun2.nm_rek as akun2 "+
-                     "from kategori_pengeluaran_harian inner join rekening as akun1 on kategori_pengeluaran_harian.kd_rek=akun1.kd_rek "+
-                     "inner join rekening as akun2 on kategori_pengeluaran_harian.kd_rek2=akun2.kd_rek order by kategori_pengeluaran_harian.nama_kategori"); 
+                "select kategori_pengeluaran_harian.kode_kategori,kategori_pengeluaran_harian.nama_kategori,akun1.nm_rek as akun1,akun2.nm_rek as akun2 from kategori_pengeluaran_harian "+
+                "inner join rekening as akun1 on kategori_pengeluaran_harian.kd_rek=akun1.kd_rek inner join rekening as akun2 on kategori_pengeluaran_harian.kd_rek2=akun2.kd_rek "+
+                (koneksiDB.KODEAKUNPENGELUARANHARIAN().equals("")?"":"where kategori_pengeluaran_harian.kd_rek2=?")+" order by kategori_pengeluaran_harian.nama_kategori"); 
             try {
+                if(!koneksiDB.KODEAKUNPENGELUARANHARIAN().equals("")){
+                    ps.setString(1,koneksiDB.KODEAKUNPENGELUARANHARIAN());
+                }
                 rs=ps.executeQuery();
                 while(rs.next()){
                     tabMode.addRow(new Object[]{
@@ -408,6 +417,8 @@ public final class DlgCariKategoriPengeluaran extends javax.swing.JDialog {
             iyembuilder=null;
         }catch(Exception e){
             System.out.println("Notifikasi : "+e);
+        }finally {
+            if (fileWriter != null) try { fileWriter.close(); } catch (Exception e) {}
         }
         LCount.setText(""+tabMode.getRowCount());
     }
@@ -442,6 +453,10 @@ public final class DlgCariKategoriPengeluaran extends javax.swing.JDialog {
             }else{
                 System.out.println("Notifikasi : "+ex);
             }
+        }finally {
+            if (myObj != null) try { myObj.close(); } catch (Exception e) {}
+            response = null;
+            root = null;
         }
         LCount.setText(""+tabMode.getRowCount());
     } 

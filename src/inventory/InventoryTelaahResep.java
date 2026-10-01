@@ -23,7 +23,6 @@ import java.awt.Dimension;
 import java.awt.event.KeyEvent;
 import java.awt.event.WindowAdapter;
 import java.awt.event.WindowEvent;
-import java.awt.event.WindowListener;
 import java.io.BufferedWriter;
 import java.io.File;
 import java.io.FileWriter;
@@ -230,7 +229,7 @@ public final class InventoryTelaahResep extends javax.swing.JDialog {
         TCari = new widget.TextBox();
         BtnCari = new widget.Button();
         BtnAll = new widget.Button();
-        TabData = new javax.swing.JTabbedPane();
+        TabData = new widget.TabPane();
         FormValidasi1 = new widget.PanelBiasa();
         PanelInput = new javax.swing.JPanel();
         ChkInput = new widget.CekBox();
@@ -455,7 +454,7 @@ public final class InventoryTelaahResep extends javax.swing.JDialog {
         panelGlass9.add(jLabel19);
 
         DTPCari1.setForeground(new java.awt.Color(50, 70, 50));
-        DTPCari1.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "08-02-2026" }));
+        DTPCari1.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "02-08-2026" }));
         DTPCari1.setDisplayFormat("dd-MM-yyyy");
         DTPCari1.setName("DTPCari1"); // NOI18N
         DTPCari1.setOpaque(false);
@@ -469,7 +468,7 @@ public final class InventoryTelaahResep extends javax.swing.JDialog {
         panelGlass9.add(jLabel21);
 
         DTPCari2.setForeground(new java.awt.Color(50, 70, 50));
-        DTPCari2.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "08-02-2026" }));
+        DTPCari2.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "02-08-2026" }));
         DTPCari2.setDisplayFormat("dd-MM-yyyy");
         DTPCari2.setName("DTPCari2"); // NOI18N
         DTPCari2.setOpaque(false);
@@ -757,10 +756,10 @@ public final class InventoryTelaahResep extends javax.swing.JDialog {
         FormInput.add(KetResepTepatDosis);
         KetResepTepatDosis.setBounds(129, 240, 140, 23);
 
-        jLabel28.setText("Telaah Obat :");
+        jLabel28.setText("Pengkajian Obat :");
         jLabel28.setName("jLabel28"); // NOI18N
         FormInput.add(jLabel28);
-        jLabel28.setBounds(528, 100, 80, 23);
+        jLabel28.setBounds(508, 100, 120, 23);
 
         jLabel29.setText("J.K. :");
         jLabel29.setName("jLabel29"); // NOI18N
@@ -931,10 +930,10 @@ public final class InventoryTelaahResep extends javax.swing.JDialog {
         FormInput.add(jLabel35);
         jLabel35.setBounds(295, 270, 140, 23);
 
-        jLabel36.setText("Telaah Resep :");
+        jLabel36.setText("Pengkajian Resep :");
         jLabel36.setName("jLabel36"); // NOI18N
         FormInput.add(jLabel36);
-        jLabel36.setBounds(0, 70, 94, 23);
+        jLabel36.setBounds(0, 70, 113, 23);
 
         jLabel37.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         jLabel37.setText("1. Tepat Pasien");
@@ -1196,7 +1195,7 @@ public final class InventoryTelaahResep extends javax.swing.JDialog {
                 param.put("emailrs",akses.getemailrs());   
                 param.put("logo",Sequel.cariGambar("select setting.logo from setting")); 
 
-                Valid.MyReportqry("rptDataTelaahResep.jasper","report","::[ Data Telaah Resep ]::",
+                Valid.MyReportqry("rptDataTelaahResep.jasper","report","::[ Data Pengkajian Resep ]::",
                     "select telaah_farmasi.no_resep,resep_obat.tgl_perawatan,resep_obat.jam,resep_obat.no_rawat,reg_periksa.no_rkm_medis,"+
                     "pasien.nm_pasien,concat(reg_periksa.umurdaftar,' ',reg_periksa.sttsumur)as umur,pasien.jk,pasien.tgl_lahir,resep_obat.kd_dokter,dokter.nm_dokter,resep_obat.status,"+
                     "telaah_farmasi.resep_identifikasi_pasien,telaah_farmasi.resep_ket_identifikasi_pasien,telaah_farmasi.resep_tepat_obat,"+
@@ -1561,7 +1560,7 @@ public final class InventoryTelaahResep extends javax.swing.JDialog {
     private widget.TextBox TNoRM;
     private widget.TextBox TNoRw;
     private widget.TextBox TPasien;
-    private javax.swing.JTabbedPane TabData;
+    private widget.TabPane TabData;
     private widget.TextBox TglLahir;
     private widget.Button btnPetugas;
     private widget.InternalFrame internalFrame1;
@@ -1631,7 +1630,7 @@ public final class InventoryTelaahResep extends javax.swing.JDialog {
             try {
                 ps.setString(1,Valid.SetTgl(DTPCari1.getSelectedItem()+""));
                 ps.setString(2,Valid.SetTgl(DTPCari2.getSelectedItem()+""));
-                if(!TCari.getText().toString().trim().equals("")){
+                if(!TCari.getText().trim().equals("")){
                     ps.setString(3,"%"+TCari.getText().trim()+"%");
                     ps.setString(4,"%"+TCari.getText().trim()+"%");
                     ps.setString(5,"%"+TCari.getText().trim()+"%");

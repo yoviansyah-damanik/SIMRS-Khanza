@@ -454,7 +454,7 @@ public final class RMMCU extends javax.swing.JDialog {
         BtnPrint = new widget.Button();
         BtnAll = new widget.Button();
         BtnKeluar = new widget.Button();
-        TabRawat = new javax.swing.JTabbedPane();
+        TabRawat = new widget.TabPane();
         internalFrame2 = new widget.InternalFrame();
         scrollInput = new widget.ScrollPane();
         FormInput = new widget.PanelBiasa();
@@ -3198,7 +3198,7 @@ public final class RMMCU extends javax.swing.JDialog {
         Scroll.setOpaque(true);
         Scroll.setPreferredSize(new java.awt.Dimension(452, 200));
 
-        tbObat.setAutoCreateRowSorter(true);
+        tbObat.setAutoCreateRowSorter(false);
         tbObat.setToolTipText("Silahkan klik untuk memilih data yang mau diedit ataupun dihapus");
         tbObat.setComponentPopupMenu(jPopupMenu1);
         tbObat.setName("tbObat"); // NOI18N
@@ -3317,6 +3317,10 @@ public final class RMMCU extends javax.swing.JDialog {
             Valid.textKosong(Anjuran,"Anjuran");
         }else if(NmDokter.getText().trim().equals("")){
             Valid.textKosong(BtnDokter,"Dokter");
+        }else if(KlasifikasiIMT.getText().trim().equals("")){
+            Valid.textKosong(KlasifikasiIMT,"Klasifikasi BMI");
+        }else if(RisikoLP.getText().trim().equals("")){
+            Valid.textKosong(RisikoLP,"Risiko Berdasar LP");
         }else{
             if(akses.getkode().equals("Admin Utama")){
                 simpan();
@@ -3386,6 +3390,10 @@ public final class RMMCU extends javax.swing.JDialog {
             Valid.textKosong(Anjuran,"Anjuran");
         }else if(NmDokter.getText().trim().equals("")){
             Valid.textKosong(BtnDokter,"Dokter");
+        }else if(KlasifikasiIMT.getText().trim().equals("")){
+            Valid.textKosong(KlasifikasiIMT,"Klasifikasi BMI");
+        }else if(RisikoLP.getText().trim().equals("")){
+            Valid.textKosong(RisikoLP,"Risiko Berdasar LP");
         }else{
             if(tbObat.getSelectedRow()>-1){
                 if(akses.getkode().equals("Admin Utama")){
@@ -4772,7 +4780,7 @@ public final class RMMCU extends javax.swing.JDialog {
     private widget.TextBox TNoRM;
     private widget.TextBox TNoRw;
     private widget.TextBox TPasien;
-    private javax.swing.JTabbedPane TabRawat;
+    private widget.TabPane TabRawat;
     private widget.TextBox TanggalRegistrasi;
     private widget.ComboBox TestButaWarna;
     private widget.Tanggal TglAsuhan;

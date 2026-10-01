@@ -149,6 +149,7 @@ public class DlgPembelian extends javax.swing.JDialog {
         NoFaktur.setDocument(new batasInput((byte)20).getKata(NoFaktur));
         kdsup.setDocument(new batasInput((byte)5).getKata(kdsup));
         kdptg.setDocument(new batasInput((byte)25).getKata(kdptg));
+        tppn.setDocument(new batasInput((byte)5).getOnlyAngka(tppn));
     }
 
     /** This method is called from within the constructor to
@@ -770,7 +771,11 @@ private void KdKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_TKdKey
                         myObj.close();
                     } catch (Exception e) {
                         sukses=false;
-                    } 
+                    } finally {
+                        if (myObj != null) try { myObj.close(); } catch (Exception e) {}
+                        response = null;
+                        root = null;
+                    }
                     
                     if(Sequel.menyimpantf2("pembelian","?,?,?,?,?,?,?,?,?,?,?","No.Faktur",11,new String[]{
                             NoFaktur.getText(),kdsup.getText(),kdptg.getText(),Valid.SetTgl(TglBeli.getSelectedItem()+""),
@@ -1086,15 +1091,6 @@ private void btnGudangActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIR
     private void formWindowOpened(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowOpened
         tampilAkunBayar();
         try {
-            if(Valid.daysOld("./cache/penerimaanobat.iyem")<8){
-                runBackground(() ->tampil2());
-            }else{
-                runBackground(() ->LoadData());
-            }
-        } catch (Exception e) {
-        }
-        
-        try {
             ps=koneksi.prepareStatement("select set_harga_obat.setharga,set_harga_obat.hargadasar,set_harga_obat.ppn from set_harga_obat");
             try {
                 rs=ps.executeQuery();
@@ -1115,6 +1111,15 @@ private void btnGudangActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIR
             }
         } catch (Exception e) {
             System.out.println("Notif : "+e);
+        }
+        
+        try {
+            if(Valid.daysOld("./cache/penerimaanobat.iyem")<8){
+                runBackground(() ->tampil2());
+            }else{
+                runBackground(() ->LoadData());
+            }
+        } catch (Exception e) {
         }
         
         if(koneksiDB.CARICEPAT().equals("aktif")){
@@ -1366,11 +1371,6 @@ private void btnGudangActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIR
     private void BtnAllActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnAllActionPerformed
         TCari.setText("");
         runBackground(() ->LoadData());
-        LSubtotal.setText("0");
-        LPotongan.setText("0");
-        LTotal2.setText("0");
-        LPpn.setText("0");
-        LTagiha.setText("0");
     }//GEN-LAST:event_BtnAllActionPerformed
 
     private void BtnAllKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_BtnAllKeyPressed
@@ -1494,6 +1494,8 @@ private void btnGudangActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIR
             iyembuilder=null;
         }catch(Exception e){
             System.out.println("Notifikasi : "+e);
+        }finally {
+            if (fileWriter != null) try { fileWriter.close(); } catch (Exception e) {}
         }        
     }
     
@@ -1654,9 +1656,13 @@ private void btnGudangActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIR
                 }
             }
             myObj.close();
-        }catch(Exception e){
+        } catch(Exception e){
             System.out.println("Notifikasi : "+e);
-        }        
+        } finally {
+            if (myObj != null) try { myObj.close(); } catch (Exception e) {}
+            response = null;
+            root = null;
+        }       
     }
 
     private void getData(){        
@@ -2580,6 +2586,8 @@ private void btnGudangActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIR
              iyembuilder=null;
         } catch (Exception e) {
             System.out.println("Notifikasi : "+e);
+        } finally {
+            if (fileWriter != null) try { fileWriter.close(); } catch (Exception e) {}
         }
     }
     

@@ -119,7 +119,7 @@ public final class DlgRanapPerRuang extends javax.swing.JDialog {
 
         TKd = new widget.TextBox();
         internalFrame1 = new widget.InternalFrame();
-        TabRawat = new javax.swing.JTabbedPane();
+        TabRawat = new widget.TabPane();
         Scroll = new widget.ScrollPane();
         tbBangsal = new widget.Table();
         Scroll2 = new widget.ScrollPane();
@@ -370,78 +370,82 @@ public final class DlgRanapPerRuang extends javax.swing.JDialog {
     }// </editor-fold>//GEN-END:initComponents
 
     private void BtnPrintActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnPrintActionPerformed
-        if(TabRawat.getSelectedIndex()==0){
-            this.setCursor(Cursor.getPredefinedCursor(Cursor.WAIT_CURSOR));
-            if(tabMode.getRowCount()==0){
-                JOptionPane.showMessageDialog(null,"Maaf, data sudah habis. Tidak ada data yang bisa anda print...!!!!");
-                //TCari.requestFocus();
-            }else if(tabMode.getRowCount()!=0){
-                
-                Map<String, Object> param = new HashMap<>();         
-                param.put("namars",akses.getnamars());
-                param.put("alamatrs",akses.getalamatrs());
-                param.put("kotars",akses.getkabupatenrs());
-                param.put("propinsirs",akses.getpropinsirs());
-                param.put("kontakrs",akses.getkontakrs());
-                param.put("emailrs",akses.getemailrs());
-                if(nmpenjab.getText().equals("")){
-                    param.put("ruang","SEMUA CARA BAYAR"); 
-                }else{
-                    param.put("ruang",nmpenjab.getText().toUpperCase()); 
-                }                       
-                param.put("periode",Tgl1.getSelectedItem()+" s.d. "+Tgl2.getSelectedItem());  
-                param.put("tanggal",Tgl2.getDate());  
-                param.put("logo",Sequel.cariGambar("select setting.logo from setting"));  
-                Sequel.queryu("delete from temporary where temp37='"+akses.getalamatip()+"'");
-                for(int r=0;r<tabMode.getRowCount();r++){ 
-                    if(!tbBangsal.getValueAt(r,0).toString().contains(">>")){
-                        Sequel.menyimpan("temporary","'"+r+"','"+
-                                        tabMode.getValueAt(r,0).toString()+"','"+
-                                        tabMode.getValueAt(r,1).toString()+"','"+
-                                        tabMode.getValueAt(r,2).toString()+"','"+
-                                        tabMode.getValueAt(r,3).toString()+"','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','"+akses.getalamatip()+"'","Transaksi");
-                    }                    
+        if(ceksukses==false){
+            if(TabRawat.getSelectedIndex()==0){
+                this.setCursor(Cursor.getPredefinedCursor(Cursor.WAIT_CURSOR));
+                if(tabMode.getRowCount()==0){
+                    JOptionPane.showMessageDialog(null,"Maaf, data sudah habis. Tidak ada data yang bisa anda print...!!!!");
+                    //TCari.requestFocus();
+                }else if(tabMode.getRowCount()!=0){
+
+                    Map<String, Object> param = new HashMap<>();         
+                    param.put("namars",akses.getnamars());
+                    param.put("alamatrs",akses.getalamatrs());
+                    param.put("kotars",akses.getkabupatenrs());
+                    param.put("propinsirs",akses.getpropinsirs());
+                    param.put("kontakrs",akses.getkontakrs());
+                    param.put("emailrs",akses.getemailrs());
+                    if(nmpenjab.getText().equals("")){
+                        param.put("ruang","SEMUA CARA BAYAR"); 
+                    }else{
+                        param.put("ruang",nmpenjab.getText().toUpperCase()); 
+                    }                       
+                    param.put("periode",Tgl1.getSelectedItem()+" s.d. "+Tgl2.getSelectedItem());  
+                    param.put("tanggal",Tgl2.getDate());  
+                    param.put("logo",Sequel.cariGambar("select setting.logo from setting"));  
+                    Sequel.queryu("delete from temporary where temp37='"+akses.getalamatip()+"'");
+                    for(int r=0;r<tabMode.getRowCount();r++){ 
+                        if(!tbBangsal.getValueAt(r,0).toString().contains(">>")){
+                            Sequel.menyimpan("temporary","'"+r+"','"+
+                                            tabMode.getValueAt(r,0).toString()+"','"+
+                                            tabMode.getValueAt(r,1).toString()+"','"+
+                                            tabMode.getValueAt(r,2).toString()+"','"+
+                                            tabMode.getValueAt(r,3).toString()+"','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','"+akses.getalamatip()+"'","Transaksi");
+                        }                    
+                    }
+
+                    Valid.MyReportqry("rptRanapPerRuang.jasper","report","::[ Laporan Rawat Inap Per Ruang ]::","select * from temporary where temporary.temp37='"+akses.getalamatip()+"' order by temporary.no",param);
                 }
-                   
-                Valid.MyReportqry("rptRanapPerRuang.jasper","report","::[ Laporan Rawat Inap Per Ruang ]::","select * from temporary where temporary.temp37='"+akses.getalamatip()+"' order by temporary.no",param);
-            }
-            this.setCursor(Cursor.getDefaultCursor());
-        }else if(TabRawat.getSelectedIndex()==1){
-            this.setCursor(Cursor.getPredefinedCursor(Cursor.WAIT_CURSOR));
-            if(tabMode2.getRowCount()==0){
-                JOptionPane.showMessageDialog(null,"Maaf, data sudah habis. Tidak ada data yang bisa anda print...!!!!");
-                //TCari.requestFocus();
-            }else if(tabMode2.getRowCount()!=0){
-                
-                Map<String, Object> param = new HashMap<>();         
-                param.put("namars",akses.getnamars());
-                param.put("alamatrs",akses.getalamatrs());
-                param.put("kotars",akses.getkabupatenrs());
-                param.put("propinsirs",akses.getpropinsirs());
-                param.put("kontakrs",akses.getkontakrs());
-                param.put("emailrs",akses.getemailrs());
-                if(nmpenjab.getText().equals("")){
-                    param.put("ruang","SEMUA CARA BAYAR"); 
-                }else{
-                    param.put("ruang",nmpenjab.getText().toUpperCase()); 
-                }                       
-                param.put("periode",Tgl1.getSelectedItem()+" s.d. "+Tgl2.getSelectedItem());  
-                param.put("tanggal",Tgl2.getDate());  
-                param.put("logo",Sequel.cariGambar("select setting.logo from setting"));  
-                Sequel.queryu("delete from temporary where temp37='"+akses.getalamatip()+"'");
-                for(int r=0;r<tabMode2.getRowCount();r++){ 
-                    if(!tbBangsal.getValueAt(r,0).toString().contains(">>")){
-                        Sequel.menyimpan("temporary","'"+r+"','"+
-                                        tabMode2.getValueAt(r,0).toString()+"','"+
-                                        tabMode2.getValueAt(r,1).toString()+"','"+
-                                        tabMode2.getValueAt(r,2).toString()+"','"+
-                                        tabMode2.getValueAt(r,3).toString()+"','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','"+akses.getalamatip()+"'","Transaksi");
-                    }                    
+                this.setCursor(Cursor.getDefaultCursor());
+            }else if(TabRawat.getSelectedIndex()==1){
+                this.setCursor(Cursor.getPredefinedCursor(Cursor.WAIT_CURSOR));
+                if(tabMode2.getRowCount()==0){
+                    JOptionPane.showMessageDialog(null,"Maaf, data sudah habis. Tidak ada data yang bisa anda print...!!!!");
+                    //TCari.requestFocus();
+                }else if(tabMode2.getRowCount()!=0){
+
+                    Map<String, Object> param = new HashMap<>();         
+                    param.put("namars",akses.getnamars());
+                    param.put("alamatrs",akses.getalamatrs());
+                    param.put("kotars",akses.getkabupatenrs());
+                    param.put("propinsirs",akses.getpropinsirs());
+                    param.put("kontakrs",akses.getkontakrs());
+                    param.put("emailrs",akses.getemailrs());
+                    if(nmpenjab.getText().equals("")){
+                        param.put("ruang","SEMUA CARA BAYAR"); 
+                    }else{
+                        param.put("ruang",nmpenjab.getText().toUpperCase()); 
+                    }                       
+                    param.put("periode",Tgl1.getSelectedItem()+" s.d. "+Tgl2.getSelectedItem());  
+                    param.put("tanggal",Tgl2.getDate());  
+                    param.put("logo",Sequel.cariGambar("select setting.logo from setting"));  
+                    Sequel.queryu("delete from temporary where temp37='"+akses.getalamatip()+"'");
+                    for(int r=0;r<tabMode2.getRowCount();r++){ 
+                        if(!tbBangsal.getValueAt(r,0).toString().contains(">>")){
+                            Sequel.menyimpan("temporary","'"+r+"','"+
+                                            tabMode2.getValueAt(r,0).toString()+"','"+
+                                            tabMode2.getValueAt(r,1).toString()+"','"+
+                                            tabMode2.getValueAt(r,2).toString()+"','"+
+                                            tabMode2.getValueAt(r,3).toString()+"','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','"+akses.getalamatip()+"'","Transaksi");
+                        }                    
+                    }
+
+                    Valid.MyReportqry("rptRanapPerRuang.jasper","report","::[ Laporan Rawat Inap Per Ruang ]::","select * from temporary where temporary.temp37='"+akses.getalamatip()+"' order by temporary.no",param);
                 }
-                   
-                Valid.MyReportqry("rptRanapPerRuang.jasper","report","::[ Laporan Rawat Inap Per Ruang ]::","select * from temporary where temporary.temp37='"+akses.getalamatip()+"' order by temporary.no",param);
+                this.setCursor(Cursor.getDefaultCursor());
             }
-            this.setCursor(Cursor.getDefaultCursor());
+        }else{
+            JOptionPane.showMessageDialog(null,"Masih proses menampilkan data, harap tunggu terlebih dahulu...!");
         }
 }//GEN-LAST:event_BtnPrintActionPerformed
 
@@ -671,7 +675,7 @@ private void BtnCariKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_B
     private widget.ScrollPane Scroll2;
     private widget.TextBox TCari;
     private widget.TextBox TKd;
-    private javax.swing.JTabbedPane TabRawat;
+    private widget.TabPane TabRawat;
     private widget.Tanggal Tgl1;
     private widget.Tanggal Tgl2;
     private widget.InternalFrame internalFrame1;

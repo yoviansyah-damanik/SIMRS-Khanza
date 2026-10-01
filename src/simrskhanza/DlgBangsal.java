@@ -176,7 +176,7 @@ public final class DlgBangsal extends javax.swing.JDialog {
         Scroll.setName("Scroll"); // NOI18N
         Scroll.setOpaque(true);
 
-        tbBangsal.setAutoCreateRowSorter(true);
+        tbBangsal.setAutoCreateRowSorter(false);
         tbBangsal.setToolTipText("Silahkan klik untuk memilih data yang mau diedit ataupun dihapus");
         tbBangsal.setComponentPopupMenu(jPopupMenu1);
         tbBangsal.setName("tbBangsal"); // NOI18N
@@ -702,7 +702,7 @@ public final class DlgBangsal extends javax.swing.JDialog {
     private void tampil() {
         Valid.tabelKosong(tabMode);
         try{
-            ps=koneksi.prepareStatement("select * from bangsal where status='1' "+(TCari.getText().trim().equals("")?"":"and (kd_bangsal like ? or nm_bangsal like ?) ")+" order by kd_bangsal");
+            ps=koneksi.prepareStatement("select * from bangsal where bangsal.status='1' "+(TCari.getText().trim().equals("")?"":"and (bangsal.kd_bangsal like ? or bangsal.nm_bangsal like ?) ")+" order by bangsal.kd_bangsal");
             try {
                 if(!TCari.getText().trim().equals("")){
                     ps.setString(1,"%"+TCari.getText().trim()+"%");
